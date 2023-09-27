@@ -1,0 +1,53 @@
+<nav class="navbar">
+  <div class="navbar-content container">
+    <div class="left">
+      <a routerLink="/" class="nav-item">
+        <fa-icon class="nav-brand" [icon]="leafIcon"></fa-icon>
+      </a>
+      <div class="nav-item">
+        <a routerLink="/shopping-cart">
+          <fa-icon class="cart-icon" [icon]="cartIcon"></fa-icon>
+          <span *ngIf="cart$ | async as cart" class="cart-item-count">
+            {{ cart.totalItemsCount }}
+          </span>
+        </a>
+      </div>
+    </div>
+    <div class="right">
+      <ng-template #anonymousUser>
+        <div class="nav-item">
+          <a routerLink="/login">Login</a>
+        </div>
+      </ng-template>
+      <div *ngIf="appUser; else anonymousUser" class="nav-item dropdown">
+        <a class="username" (click)="this.toggleDropdownMenu()">
+          {{ appUser.name || appUser.email }}
+          <fa-icon class="dropdown-icon" [icon]="chevronIcon"></fa-icon>
+        </a>
+        <div *ngIf="this.showDropdownMenu" class="dropdown-menu">
+          <a
+            class="dropdown-item"
+            routerLink="/my/orders"
+            (click)="this.toggleDropdownMenu()"
+            >My Orders</a
+          >
+          <ng-container *ngIf="appUser.isAdmin">
+            <a
+              class="dropdown-item"
+              routerLink="/admin/orders"
+              (click)="this.toggleDropdownMenu()"
+              >Manage Orders</a
+            >
+            <a
+              class="dropdown-item"
+              routerLink="/admin/products"
+              (click)="this.toggleDropdownMenu()"
+              >Manage Products</a
+            >
+          </ng-container>
+          <a class="dropdown-item" (click)="logout()">Log Out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

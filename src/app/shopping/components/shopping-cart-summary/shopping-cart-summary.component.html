@@ -1,0 +1,18 @@
+<div class="shopping-cart-summary">
+  <div class="body">
+    <h4 class="title">Order Summary</h4>
+    <p class="subtitle">
+      You have {{ cart.totalItemsCount }} items in your shopping cart.
+    </p>
+    <ul class="item-list">
+      <li *ngFor="let item of cart.items" class="item-list-item">
+        <span>{{ item.quantity }} x {{ item.title }}</span>
+        <span>{{ item.totalPrice | currency : "USD" : "symbol" }}</span>
+      </li>
+      <li class="item-list-item total-price">
+        <span>Total</span>
+        <span>{{ cart.totalPrice | currency : "USD" : "symbol" }}</span>
+      </li>
+    </ul>
+  </div>
+</div>

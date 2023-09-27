@@ -1,0 +1,43 @@
+@use '../../../../styles.scss' as vars;
+
+.card {
+    border-radius: 8px;
+    border: 1px solid vars.$light-gray;
+    color: vars.$color-text;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+
+    .card-image {
+        object-fit: cover;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .card-details {
+            padding: 15px;
+
+            .card-title {
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
+
+            .card-text {
+                font-size: 1.6rem;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .card-footer {
+
+        .card-button {
+            width: 100%;
+            font-weight: 600;
+        }
+    }
+}

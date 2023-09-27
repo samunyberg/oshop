@@ -1,0 +1,8 @@
+<div class="check-out container" *ngIf="cart$ | async as cart">
+  <div class="left">
+    <shipping-form [cart]="cart"></shipping-form>
+  </div>
+  <div class="right">
+    <shopping-cart-summary [cart]="cart"></shopping-cart-summary>
+  </div>
+</div>

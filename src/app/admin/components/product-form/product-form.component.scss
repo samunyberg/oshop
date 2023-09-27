@@ -1,0 +1,35 @@
+@use '../../../../styles.scss' as vars;
+
+.product-form {
+    display: flex;
+    padding: 40px;
+    color: vars.$color-text;
+}
+
+.left {
+    flex: 2;
+
+    .left-heading {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 40px;
+    }
+}
+
+.right {
+    flex: 1;
+
+    .right-heading {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .product-preview {
+        width: 40rem;
+    }
+}

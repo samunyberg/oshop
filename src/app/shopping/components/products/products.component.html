@@ -1,0 +1,10 @@
+<div class="products container">
+  <div class="products-filter">
+    <product-filter [category]="category"></product-filter>
+  </div>
+  <div class="products-list">
+    <div *ngFor="let p of filteredProducts" class="product-card-container">
+      <product-card [product]="p" [shopping-cart]="cart"></product-card>
+    </div>
+  </div>
+</div>

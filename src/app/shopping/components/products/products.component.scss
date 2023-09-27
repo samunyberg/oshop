@@ -1,0 +1,27 @@
+@use '../../../../styles.scss' as vars;
+
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 0;
+
+    .products-filter {
+        flex: 1;
+        height: fit-content;
+        position: sticky;
+        top: 12rem;
+    }
+
+    .products-list {
+        display: grid;
+        flex: 3;
+        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+
+        .product-card-container {
+            width: 34rem;
+        }
+    }
+}

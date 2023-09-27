@@ -1,0 +1,90 @@
+@use '../../../../styles.scss' as vars;
+
+.navbar {
+    background-color: vars.$color-primary;
+    height: 80px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    border-bottom: 5px solid darken(vars.$color-primary, 5%);
+
+    .navbar-content {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+    }
+
+    .left {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-brand {
+        font-size: 3rem !important;
+        margin-right: 40px;
+        color: vars.$color-accent;
+    }
+
+    .cart-icon {
+        font-size: 1.8rem !important;
+        margin-right: 10px;
+    }
+
+    .nav-item {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: vars.$color-text;
+        transition: all 0.15s;
+
+        &:hover {
+            color: vars.$color-text-soft;
+        }
+
+        .cart-item-count {
+            background-color: orange;
+            border-radius: 12px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-left: 3px;
+            padding: 2px 12px;
+        }
+    }
+
+    .dropdown {
+        position: relative;
+
+        .username {
+            font-weight: 600;
+        }
+
+        .dropdown-icon {
+            color: inherit;
+            margin-left: 3px;
+        }
+
+        .dropdown-menu {
+            align-items: flex-start;
+            background-color: vars.$white;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            display: flex;
+            flex-direction: column;
+            right: 0px;
+            position: absolute;
+            top: 35px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .dropdown-item {
+            font-size: 1.5rem;
+            width: 100%;
+            padding: 10px 15px;
+
+            &:hover {
+                background-color: vars.$color-primary;
+            }
+        }
+    }
+}

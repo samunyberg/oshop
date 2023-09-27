@@ -1,0 +1,75 @@
+@use '../../../../styles.scss' as vars;
+
+.admin-orders {
+    .admin-orders-content {
+        padding: 40px;
+        color: vars.$color-text;
+        width: 80%;
+
+        .title {
+            font-size: 2.4rem;
+            margin-bottom: 20px;
+        }
+
+        .table {
+            border-collapse: collapse;
+            margin: 0 auto;
+            width: 100%;
+            font-size: 1.6rem;
+            background-color: vars.$white;
+            border-radius: 5px;
+            overflow: hidden;
+
+            th {
+                background-color: vars.$color-primary;
+                font-weight: bold;
+                text-align: left;
+                padding: 10px;
+                border-bottom: 2px solid vars.$light-gray;
+            }
+
+            td {
+                padding: 10px;
+                border-bottom: 1px solid vars.$light-gray;
+            }
+
+            tr:hover {
+                background-color: vars.$color-primary;
+            }
+
+            tbody {
+                font-weight: 500;
+
+                tr:last-child {
+                    border-bottom: none;
+                }
+            }
+
+            th:last-child,
+            td:last-child {
+                text-align: center;
+            }
+
+            th:first-child,
+            td:first-child {
+                padding-left: 20px;
+            }
+
+            th:last-child {
+                width: 50px;
+            }
+
+            td:last-child {
+                width: 100px;
+            }
+
+            a {
+                color: vars.$color-accent;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+ @use '../../../../styles.scss' as vars;
+
+ .update-quantity {
+     align-items: center;
+     display: flex;
+     font-size: 1.6rem;
+     font-weight: 500;
+     justify-content: space-between;
+
+     button {
+         border-radius: 0;
+         flex: 1;
+         background-color: vars.$color-secondary;
+         color: vars.$white;
+     }
+
+     span {
+         flex: 8;
+         text-align: center;
+     }
+ }

@@ -1,0 +1,52 @@
+<div class="login">
+  <div class="login-content container">
+    <div class="login-card">
+      <h1 class="login-title">Login</h1>
+      <h3 class="login-info">Use admin:123456 to try out admin features.</h3>
+      <h3 *ngIf="loginError" class="login-error">Incorrect username and/or password.</h3>
+      <form class="form" #f="ngForm">
+        <div class="form-group">
+          <label for="email" class="label">Email</label>
+          <input
+            #email="ngModel"
+            [(ngModel)]="this.userCredentials.email"
+            type="text"
+            name="email"
+            id="email"
+            class="input"
+            required
+          />
+          <div *ngIf="email.touched && email.invalid" class="input-error">
+            <div *ngIf="email.errors?.['required']">Username is required.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password" class="label">Password</label>
+          <input
+            #password="ngModel"
+            [(ngModel)]="this.userCredentials.password"
+            type="password"
+            name="password"
+            id="password"
+            class="input"
+            required
+          />
+          <div *ngIf="password.touched && password.invalid" class="input-error">
+            <div *ngIf="password.errors?.['required']">
+              Password is required.
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-primary" (click)="loginWithEmailAndPassword()">
+          Login
+        </button>
+      </form>
+      <div class="login-providers">
+        <span>OR</span>
+      </div>
+      <button class="btn btn-secondary" (click)="loginWithGoogle()">
+        Login with Google
+      </button>
+    </div>
+  </div>
+</div>

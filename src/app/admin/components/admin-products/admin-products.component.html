@@ -1,0 +1,56 @@
+<div class="admin-products">
+  <div class="admin-products-content container">
+    <div class="controls">
+      <a routerLink="/admin/products/new" class="btn btn-primary"
+        >New Product</a
+      >
+      <input
+        #query
+        (keyup)="filter(query.value)"
+        class="input"
+        type="text"
+        placeholder="Search..."
+      />
+    </div>
+    <table
+      class="table"
+      mat-table
+      [dataSource]="dataSource"
+      matSort
+      aria-label="Products"
+    >
+      <!-- Id Column -->
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
+        <td mat-cell *matCellDef="let product">{{ product.title }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
+        <td mat-cell *matCellDef="let product">{{ product.price }}</td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let product">
+          <a [routerLink]="['/admin/products/', product.key]">Edit</a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator
+      #paginator
+      [length]="dataSource?.data?.length"
+      [pageIndex]="0"
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 20]"
+      aria-label="Select page"
+    >
+    </mat-paginator>
+  </div>
+</div>

@@ -1,18 +1,32 @@
 import { NgModule } from '@angular/core';
+import { AngularFireModule } from '@angular/fire/compat';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
+import { AdminAuthGuard } from 'app/admin/services/admin-auth-guard/admin-auth-guard.service';
+import { environment } from 'environments/environment';
+import { AdminModule } from './admin/admin.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './core/components/login/login.component';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
+import { ProductsComponent } from './shopping/components/products/products.component';
+import { ShoppingModule } from './shopping/shopping.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    CoreModule,
+    SharedModule,
+    AdminModule,
+    ShoppingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    RouterModule.forRoot([
+      { path: '', component: ProductsComponent },
+      { path: 'login', component: LoginComponent },
+    ]),
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [AdminAuthGuard],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

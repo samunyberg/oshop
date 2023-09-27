@@ -1,0 +1,81 @@
+<form class="form" #f="ngForm" (ngSubmit)="placeOrder()">
+  <h2 class="left-heading">Shipping Information</h2>
+  <div class="form-group">
+    <label class="label" for="name">Name</label>
+    <input
+      #name="ngModel"
+      [(ngModel)]="shipping.name"
+      name="name"
+      id="name"
+      type="text"
+      class="input"
+      required
+      maxlength="45"
+      minlength="3"
+    />
+    <div *ngIf="name.touched && name.invalid" class="input-error">
+      <div *ngIf="name.errors?.['required']">Name is required.</div>
+      <div *ngIf="name.errors?.['minlength']">
+        Name must be at least 3 characters long.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="label" for="address">Address</label>
+    <input
+      #addressLine1="ngModel"
+      [(ngModel)]="shipping.addressLine1"
+      placeholder="Line 1"
+      name="addressLine1"
+      id="addressLine1"
+      type="text"
+      class="input"
+      required
+      maxlength="45"
+      minlength="3"
+    />
+    <div
+      *ngIf="addressLine1.touched && addressLine1.invalid"
+      class="input-error"
+    >
+      <div *ngIf="addressLine1.errors?.['required']">
+        Address Line 1 is required.
+      </div>
+      <div *ngIf="addressLine1.errors?.['minlength']">
+        Address Line 1 must be at least 3 characters long.
+      </div>
+    </div>
+    <input
+      #addressLine2="ngModel"
+      [(ngModel)]="shipping.addressLine2"
+      placeholder="Line 2 (optional)"
+      name="addressLine2"
+      id="addressLine2"
+      type="text"
+      class="input address-line2"
+      maxlength="45"
+      minlength="3"
+    />
+  </div>
+  <div class="form-group">
+    <label class="label" for="city">City</label>
+    <input
+      #city="ngModel"
+      [(ngModel)]="shipping.city"
+      name="city"
+      id="city"
+      type="text"
+      class="input"
+      required
+      maxlength="45"
+      minlength="3"
+    />
+    <div *ngIf="city.touched && city.invalid" class="input-error">
+      <div *ngIf="city.errors?.['required']">City is required.</div>
+      <div *ngIf="city.errors?.['minlength']">
+        City must be at least 3 characters long.
+      </div>
+    </div>
+  </div>
+  <button [disabled]="f.invalid" class="btn btn-primary">Place Order</button>
+</form>

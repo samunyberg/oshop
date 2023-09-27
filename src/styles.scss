@@ -1,1 +1,176 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+$color-primary: #f5f5f5;
+$color-secondary: rgb(135, 142, 151);
+$color-accent: #bac914;
+$color-danger: tomato;
+$color-text: #484848;
+$color-text-soft: #6f6f6f;
+$white: #fff;
+$light-gray: #ccc;
+$color-error-bg: rgb(250, 200, 200);
+$color-error: rgb(165, 40, 20);
+
+html {
+    font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+// Layout
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+// Buttons
+.btn {
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.6rem;
+    padding: 10px 15px;
+    white-space: nowrap;
+
+}
+
+.btn-primary {
+    background-color: $color-accent;
+    color: $white;
+
+    &:hover {
+        background-color: lighten($color-accent, 5%);
+    }
+}
+
+.btn-secondary {
+    background-color: $color-secondary;
+    color: $white;
+
+    &:hover {
+        background-color: lighten($color-secondary, 5%);
+    }
+}
+
+.btn-danger {
+    background-color: $color-danger;
+    color: $white;
+
+    &:hover {
+        background-color: lighten($color-danger, 5%);
+    }
+}
+
+.btn-light {
+    background-color: lighten($light-gray, 15%);
+    color: $color-text;
+
+    &:hover {
+        background-color: $light-gray;
+    }
+}
+
+.btn-small {
+    font-size: 1.4rem;
+    padding: 8px 10px;
+}
+
+//Forms
+.form {
+    width: 100%;
+    font-size: 1.6rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.label {
+    display: block;
+    font-weight: 500;
+}
+
+.input {
+    border-radius: 6px;
+    border: 1px solid $light-gray;
+    height: 4rem;
+    margin-top: 7px;
+    outline: none;
+    padding: 0 15px;
+    width: 100%;
+    font-size: inherit;
+
+    &:focus {
+        border: 2px solid $color-accent;
+    }
+}
+
+.input::placeholder {
+    font-size: inherit;
+}
+
+.input-error {
+    border-radius: 6px;
+    background-color: $color-error-bg;
+    color: $color-error;
+    font-size: inherit;
+    height: 4rem;
+    padding: 6px 15px;
+    width: 100%;
+}
+
+.form-input-addon {
+    border-radius: 6px;
+    border: 1px solid $light-gray;
+    height: 4rem;
+    margin-top: 7px;
+    outline: none;
+    width: 50rem;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+
+}
+
+.form-input-addon>input {
+    border: none;
+    outline: none;
+    height: 100%;
+    width: 90%;
+    flex: 12;
+    padding: 0 15px;
+
+    &:focus {
+        border: 1px solid $color-accent;
+    }
+}
+
+.input-addon {
+    align-items: center;
+    background-color: $color-primary;
+    border-right: 1px solid $light-gray;
+    display: flex;
+    flex: 1;
+    font-size: 1.8rem;
+    height: 100%;
+    justify-content: center;
+}

@@ -1,0 +1,25 @@
+<div class="my-orders">
+  <div class="my-orders-content container">
+    <h1 class="title">My Orders</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Customer</th>
+          <th>Date</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>
+            {{ order.shipping.name }}
+          </td>
+          <td>
+            {{ order.datePlaced | date }}
+          </td>
+          <td><a>View</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

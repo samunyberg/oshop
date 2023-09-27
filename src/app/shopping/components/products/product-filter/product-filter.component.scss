@@ -1,0 +1,31 @@
+@use '../../../../../styles.scss' as vars;
+
+.category-list {
+    border-radius: 10px;
+    border: 1px solid vars.$light-gray;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    height: fit-content;
+    overflow: hidden;
+    transition: all 1.15s;
+
+    .category-list-item {
+        border-bottom: 1px solid vars.$light-gray;
+        padding: 15px;
+    }
+
+    .category-list-item:last-of-type {
+        border-bottom: none;
+    }
+
+    .category-list-item:hover {
+        background-color: vars.$color-primary;
+    }
+
+    .category-list-item.active {
+        background-color: vars.$color-accent;
+        color: white;
+    }
+}

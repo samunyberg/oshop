@@ -1,0 +1,90 @@
+@use '../../../../styles.scss' as vars;
+
+.shopping-cart {
+    padding: 40px;
+    font-size: 1.6rem;
+    color: vars.$color-text;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .shopping-cart-content {
+        width: 80%;
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .clear-cart-button {
+            float: right;
+        }
+
+        .table {
+            background-color: #fff;
+            border-collapse: collapse;
+            font-weight: 500;
+            margin: 40px 0;
+            overflow: hidden;
+            width: 100%;
+
+            thead {
+                border-top: 1px solid vars.$light-gray;
+                border-bottom: 1px solid vars.$light-gray;
+
+                th {
+                    padding: 10px 20px;
+                    text-align: left;
+
+                    &:nth-child(2) {
+                        text-align: center;
+                    }
+
+                    &:last-child {
+                        text-align: right;
+                    }
+                }
+            }
+
+            tbody {
+                .cart-product {
+                    align-items: center;
+                    gap: 20px;
+                    display: flex;
+
+                    .thumbnail {
+                        width: 8rem;
+                        height: 8rem;
+                        border-radius: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                td {
+                    padding: 10px 20px;
+                    border-bottom: 1px solid vars.$light-gray;
+
+                    &:nth-child(2) {
+                        width: 260px;
+                    }
+
+                    &:last-child {
+                        text-align: right;
+                    }
+                }
+            }
+
+            tfoot {
+                td {
+                    padding: 15px 20px;
+                    font-size: 1.8rem;
+                    font-weight: 700;
+
+                    &:last-child {
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+}
